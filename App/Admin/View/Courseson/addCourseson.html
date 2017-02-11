@@ -1,0 +1,76 @@
+<html>
+<head>
+	<title></title>
+	
+	<link href="__PUBLIC__/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/bootstrap-responsive.min.css" rel="stylesheet">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+	<style type="text/css">
+		body{  
+			margin-left:auto;  
+			margin-right:auto; 
+			margin-top:20PX; 
+			width:80%;
+			}
+		span{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+
+
+
+
+
+<form action="{:U('Admin/Courseson/addCourseson')}" method="post" class="form-horizontal">
+  <div class="control-group">
+    <label class="control-label" >课程代码</label>
+    <div class="controls">
+      <input type="text"   name="cou_code" placeholder="课程代码"><span>&nbsp* </span>
+    </div>
+  </div>
+
+
+  <div class="control-group">
+    <label class="control-label" >课程子序号</label>
+    <div class="controls">
+      <input type="text"  name="cou_number" placeholder="课程子序号"><span>&nbsp* </span>
+    </div>
+  </div>
+  
+
+  <div class="control-group">
+    <label class="control-label" >学年学期</label>
+    <div class="controls">
+      <input type="text"   name="cou_term" placeholder="学年学期"><span>&nbsp* </span>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" >总可选人数</label>
+    <div class="controls">
+      <input type="text" name="cou_total" placeholder="总可选人数"><span>&nbsp* </span>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" >剩余人数</label>
+    <div class="controls">
+      <input type="text" name="cou_remainder" placeholder="剩余人数"><span>&nbsp* </span>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="control-label" >备注</label>
+    <div class="controls">
+      <input type="text" name="cou_remark" placeholder="备注"><span>&nbsp* </span>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="controls">
+      <button type="submit" class="btn">添加</button>
+    </div>
+  </div>
+</form>
+
+</body>
+</html>
