@@ -1,0 +1,58 @@
+body{
+	margin:0;
+	padding: 0;
+	width: 80%;
+	margin:auto;
+	padding-top: 10px;
+}
+.book_tag
+{
+	width: 224px;
+	height: 166px;
+	background-image:url("../img/1.png");
+	background-size: 100% 100%;
+	box-shadow: 0 0 5px #e4e6e8;
+    font-size: 15px ;
+    line-height: 22px;
+	float:left;
+	margin:20px;
+}
+.book_tag:hover{
+	box-shadow: 0 0 5px #c2c2c2;	
+}
+.book_tag:hover .pull_up
+{
+	top:26px;
+}
+.pull_up{
+	overflow:hidden;
+	width:204px;
+	height: 80px;
+	background-image:linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 1) 50% ,rgba(255, 255, 255, 1) 100%); 
+	padding:10px;
+	position: relative;
+	top: 66px;
+	word-wrap: break-word;
+
+	transition:top 1s;
+	-moz-transition:top 1s; /* Firefox 4 */
+	-webkit-transition:top 1s; /* Safari and Chrome */
+	-o-transition:top 1s; /* Opera */
+
+}
+.read_count{
+	width:204px;
+	height: 30px;
+	padding-left: 10px;
+	padding-right:10px;
+	padding-top: 10px;
+	background-color: #fff;
+	z-index: 1000;
+	position: relative;
+	top: 26px;
+	font-size: 1em ;
+}
+
+
+
+
