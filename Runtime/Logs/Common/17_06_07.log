@@ -1,6 +1,0 @@
-[ 2017-06-07T16:12:20+08:00 ] ::1 /educate/index.php/educate/index.php/Home/exam/addexam.html/cou_number/3SL0089O.09.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000290s ]
-ERR: 无法加载模块:Educate
-
