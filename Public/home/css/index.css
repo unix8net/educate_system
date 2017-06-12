@@ -1,0 +1,100 @@
+.ue-docs-caption{
+		    background: #563D7C;
+		    color: #ffffff;
+		    width: 100%;
+		    padding: 50px 0px;
+		    margin-top: 70px;
+       }
+
+	.nav > li > a:hover, .nav > li > a:focus {
+		
+	    text-decoration: none;
+	    background-color: #eee;
+	  }
+	a:hover
+	{
+	    text-decoration: none;
+	}
+/*	.navbar
+	{
+		background-color: #c70757;
+		background-color: #000;
+	}*/
+	  ul,li{
+	  	list-style: none;
+	  }
+	  a{
+	  	text-decoration:none;
+	  }
+	  #guidebar .nav>li>a{
+
+	  	padding: 5px 5px;
+	  	font-size: 13px;
+	  }
+	 .nav{
+	 	margin-left: 15px;
+	 }
+
+	.navbar-fixed-top {
+	    top: 0;
+	    border-width: 0 0 1px;
+	}
+	.navbar-fixed-top, .navbar-fixed-bottom {
+	    border-radius: 0;
+	    position: fixed;
+	    right: 0;
+	    left: 0;
+	    z-index: 1030;
+	
+	}
+	.nav_right{
+		position: absolute;
+		right: 20px;
+		top: 0px;
+	}
+	.content{
+		position: absolute;
+		top: 40px;
+		bottom: 0px;
+		left: 0PX;
+		right: 0PX;
+		overflow-y:auto; 
+		padding-left: 350PX;
+		padding-right: 100PX;
+		padding-top: 60px;
+		font-size: 14px;
+		line-height: 1.5;
+		text-align: justify;
+	}
+
+	.category{
+
+		margin-top: 10px;
+		margin-bottom: 10px;
+		
+	}
+
+	.category a{
+
+		text-decoration:none;
+		font-size: 18px;
+
+	}
+	#guidebar{
+
+		position: absolute;
+		top: 50px;
+		bottom: 0px;
+		width:250px;
+		overflow-y:auto; 
+		z-index: 10;
+		background-color: #e5e3e9
+
+	}
+	.search{
+		padding-bottom: 30px;
+	}
+
+	#guidebar a{
+		color: #716b7a;
+	}

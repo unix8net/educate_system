@@ -15,6 +15,10 @@
 		span{
 			color:red;
 		}
+    select{
+      position: absolute;
+      width:206px;
+    }
 	</style>
 </head>
 <body>
@@ -44,7 +48,12 @@
   <div class="control-group">
     <label class="control-label" >专业</label>
     <div class="controls">
-      <input type="text"  name="pro_code" value="{$result.pro_code}">
+      <select class="form-control" name='pro_code' > 
+        <option value="{$result.pro_code}">{$result.pro_name}</option>
+        <foreach name="_pro" item="it">
+          <option value="{$it.pro_code}">{$it.pro_name}</option> 
+        </foreach>
+      </select>
     </div>
   </div>
   <div class="control-group">

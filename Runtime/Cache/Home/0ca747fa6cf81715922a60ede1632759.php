@@ -1,0 +1,154 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no"/>
+<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"> 
+<link rel="shortcut icon" href="image/login.ico">
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/educate/Public/home/css/tea_index.css">
+	
+<script type="text/javascript" src="/educate/Public/home/js/tea_index.js"></script>
+
+
+</head>
+<body>
+	<div id="welcome">
+	  <ul class="nav nav_right navbar-nav">
+	      <li><a href="/educate/index.php/Home/teaInfo/showPerson.html"  id="welcome">欢迎你：<?php echo ($name); ?></a></li>
+	      <li><a href="/educate/index.php/Home/Index/tea_login_out.html" >注销</a></li>
+	  </ul>
+	</div>
+    
+	<div   class="content">
+		<?php if(is_array($list)): foreach($list as $key=>$info): ?><form action="<?php echo U('teaInfo/updateinfo');?>" method="post">
+			<table class="table table-striped">
+			<tbody>
+				<tr>
+					<td>姓名</td>
+					<td><?php echo ($info["tea_name"]); ?></td>
+					<td>身份证号码</td>
+					<td><?php echo ($info["tea_idcard"]); ?></td>
+				</tr>
+				<tr>
+					<td>专业</td>
+					<td><?php echo ($info["pro_name"]); ?></td>
+					<td>政治面貌</td>
+					<td><input type="text" name="tea_party" value="<?php echo ($info["tea_party"]); ?>"></td>
+				</tr>
+
+				<tr>
+					<td>编号</td>
+					<td><?php echo ($info["tea_idnum"]); ?></td>
+					<td>院系</td>
+					<td>数理学院</td>
+				</tr>
+				<tr>
+					<td>注册时间</td>
+					<td><?php echo ($info["tea_enrol"]); ?></td>
+					<td>职称</td>
+					<td><?php echo ($info["tea_title"]); ?></td>
+
+				</tr>
+				<tr>
+					<td>出生日期</td>
+					<td><input type="" name="tea_birth" value="<?php echo ($info["tea_birth"]); ?>"></td>
+					<td>性别</td>
+					<td>
+						<select name="tea_sex" >
+					        <option><?php echo ($info["tea_sex"]); ?></option>
+					        <option value="男">男</option>
+					        <option value="女">女</option>
+					    </select>
+				    </td>
+
+				</tr>
+				<tr>
+					<td>民族</td>
+					<td>
+						<select  name="tea_nation" >
+						<option><?php echo ($info["tea_nation"]); ?></option>
+						<option    value="哈萨克族">哈萨克族</option>
+						<option    value="白族">白族</option>
+						<option    value="锡伯族">锡伯族</option>
+						<option    value="蒙古族">蒙古族</option>
+						<option    value="畲族">畲族</option>
+						<option    value="傈僳族">傈僳族</option>
+						<option    value="回族">回族</option>
+						<option     value="黎族">黎族</option>
+						<option     value="藏族">藏族</option>
+						<option     value="羌族">羌族</option>
+						<option     value="朝鲜族">朝鲜族</option>
+						<option     value="仫佬族">仫佬族</option>
+						<option     value="普米族">普米族</option>
+						<option     value="维吾尔族">维吾尔族</option>
+						<option     value="彝族">彝族</option>
+						<option     value="土族">土族</option>
+						<option     value="布依族">布依族</option>
+						<option     value="傣族">傣族</option>
+						<option     value="纳西族">纳西族</option>
+						<option     value="土家族">土家族</option>
+						<option     value="瑶族">瑶族</option>
+						<option     value="满族">满族</option>
+						<option     value="仡佬族">仡佬族</option>
+						<option     value="哈尼族">哈尼族</option>
+						<option     value="苗族">苗族</option>
+						<option     value="壮族">壮族</option>
+						<option     value="侗族">侗族</option>
+						<option     value="高山族">高山族</option>
+						<option     value="佤族">佤族</option>
+						<option     value="拉祜族">拉祜族</option>
+						<option     value="水族">水族</option>
+						<option     value="东乡族">东乡族</option>
+						<option     value="景颇族">景颇族</option>
+						<option     value="柯尔克孜族">柯尔克孜族</option>
+						<option     value="达斡尔族">达斡尔族</option>
+						<option     value="布朗族">布朗族</option>
+						<option     value="撒拉族">撒拉族</option>
+						<option     value="毛难族">毛难族</option>
+						<option     value="阿昌族">阿昌族</option>
+						<option      value="塔吉克族">塔吉克族</option>
+						<option      value="怒族">怒族</option>
+						<option      value="乌孜别克族">乌孜别克族</option>
+						<option      value="俄罗斯族">俄罗斯族</option>
+						<option      value="鄂温克族">鄂温克族</option>
+						<option      value="德昂族">德昂族</option>
+						<option      value="保安族">保安族</option>
+						<option      value="裕固族">裕固族</option>
+						<option      value="京族">京族</option>
+						<option      value="塔塔尔族">塔塔尔族</option>
+						<option      value="独龙族">独龙族</option>
+						<option      value="鄂伦春族">鄂伦春族</option>
+						<option      value="赫哲族">赫哲族</option>
+						<option      value="珞巴族">珞巴族</option>
+						<option      value="基诺族">基诺族</option>
+						<option    value="汉族">汉族</option>
+						<option     value="门巴族">门巴族</option>
+						</select>
+					</td>
+					<td>地址</td>
+					<td><input type="" name="tea_address" value="<?php echo ($info["tea_address"]); ?>"></td>
+				</tr>
+				<tr>
+					<td>电话</td>
+					<td><input type="" name="tea_contact" value="<?php echo ($info["tea_contact"]); ?>"></td>
+					<td>QQ</td>
+					<td><input type="" name="tea_qq" value="<?php echo ($info["tea_qq"]); ?>" ></td>
+				</tr>
+				<tr>
+					<td>籍贯</td>
+					<td><input type="text" name="tea_native" value="<?php echo ($info["tea_native"]); ?>"></td>
+				</tr>
+			</tbody>
+			</table>
+			<button type="submit" class="btn">修改</button>
+		</form><?php endforeach; endif; ?>
+
+	</div>   
+
+
+
+
+</body>
+</html>

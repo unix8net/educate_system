@@ -32,10 +32,10 @@
 
 		<select class="form-control" name='type'> 
 			<option value="stu_idnum">学号</option> 
-			<option value="stu_class">班级</option> 
+			<option value="cla_name">班级</option> 
 			<option value="stu_name">姓名</option> 
 		</select>
- 		<input style="margin-left: 100px" type="text" name="name" class="input-medium search-query">
+ 		<input style="margin-left: 100px" type="text" name="name" class="input-medium search-query" value="{$value}">
  		<button type="submit" class="btn">Search</button>
 
 	</form>
@@ -48,7 +48,7 @@
 			<tr>
 				<td>{$vo.stu_name}</td>
 				<td>{$vo.stu_idnum}</td>
-				<td>{$vo.stu_class}</td>
+				<td>{$vo.cla_name}</td>
 				<td>{$vo.stu_enrol}</td>
 				<td><a href="{:U('Admin/Students/deleteStudent')}?stu_idnum={$vo.stu_idnum}">删除</a></td>
 				<td><a href="{:U('Admin/Students/alterStudent')}?stu_idnum={$vo.stu_idnum}">修改</a></td>

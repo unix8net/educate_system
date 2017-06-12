@@ -5,6 +5,7 @@ class LoginController extends Controller{
  
 	public function login()
 	 {
+        
         if(session('login')=='is_login')$this->success('你已登录',U('Admin/Index/index'));
 	 	else if(IS_POST)
         {
@@ -46,4 +47,5 @@ class LoginController extends Controller{
         session('login',null);
 	 	$this->success('退出成功',U('Admin/Login/login'));
 	 }
+
 }

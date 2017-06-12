@@ -1,0 +1,38 @@
+.test{
+	width:80%;
+	margin: 0 auto 0 auto;
+	padding-bottom: 30px
+}
+table{
+	width: 100%;
+	border-spacing: 0px;
+
+	background: none repeat scroll 0% 0% #1D1E24;
+}
+th,td
+{
+	text-align: left;
+	padding:13px 0px;
+
+}
+.td-first{
+	text-align: center;
+	color: green;
+}
+
+#head{
+	color:#fff;
+}
+#td-1{
+	color: #fff;
+}
+tr:nth-child(n+3){
+	background: none repeat scroll 0% 0% #CDCDCD;
+
+}
+tr:nth-child(2n+2){
+	background: none repeat scroll 0% 0% #fff;
+}
+tr:nth-child(n+2):hover{
+	background-color: green;
+}

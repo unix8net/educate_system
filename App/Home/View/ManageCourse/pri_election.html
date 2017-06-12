@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no"/>
+<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"> 
+<link rel="shortcut icon" href="image/login.ico">
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/index.css">
+<script type="text/javascript" src="__PUBLIC__/home/js/index.js"></script>	
+
+
+</head>
+<body>
+<div class="content">
+	<div id="welcome">
+	  <ul class="nav nav_right navbar-nav">
+	      <li><a href="/educate/index.php/Home/PersonInfo/showPerson.html"  id="welcome">欢迎你：<?php echo session('stu_name');?></a></li>
+	      <li><a href="/educate/index.php/Home/Index/login_out.html" >注销</a></li>
+	  </ul>
+	</div>
+
+
+	<h3>已选课程</h3>
+	<table class="table table-hover table-bordered">
+	 {$thead}
+	  <tbody>
+		<foreach name="list1" item="vo">
+			<tr>
+				<td>{$vo.cou_number}</td>
+				<td>{$vo.cou_name}</td>
+				<td>{$vo.cou_interval}</td>
+				<td>{$vo.cou_place}</td>
+				<td>{$vo.cou_total}</td>
+				<td>{$vo.cou_remainder}</td>
+				<td>{$vo.tea_name}</td>
+				<td><a href="{:U('Home/ManageCourse/unjoin')}?cou_number={$vo.cou_number}">退课</a></td>
+			</tr>
+		</foreach>
+	  </tbody>
+	</table>
+
+	<h3>可选课程</h3>
+	<table class="table table-hover table-bordered">
+	 {$thead}
+	  <tbody>
+		<foreach name="list" item="vo">
+			<tr>
+				<td>{$vo.cou_number}</td>
+				<td>{$vo.cou_name}</td>
+				<td>{$vo.cou_interval}</td>
+				<td>{$vo.cou_place}</td>
+				<td>{$vo.cou_total}</td>
+				<td>{$vo.cou_remainder}</td>
+				<td>{$vo.tea_name}</td>
+				<td><a href="{:U('Home/ManageCourse/join')}?cou_number={$vo.cou_number}">报名</a></td>
+			</tr>
+		</foreach>
+	  </tbody>
+	</table>
+	{$page}
+</div>	
+</body>
+</html>

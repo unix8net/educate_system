@@ -49,18 +49,38 @@ class BaseController extends Controller{
      * @param  string $order     排序规则
      * @param  string $thead     表头
      * @param  string $condition 查询条件
-     * @return no            
+     * @return no             
      */
-    protected function search($_table,$field,$order,$thead='',$condition='')
+    protected function search($_table,$field,$order,$thead='',$condition='',$join='')
     {
 
-        $count = $_table->where($condition)->count();// 查询满足要求的总记录数
-     
+       if(IS_GET)$condition=$_GET;
+
+        foreach($condition as $key=>$val) {
+            if($key=='p')continue;
+            $_map[$key]=array('like','%'.$val.'%');
+            $this->assign('value',$val);
+        }
+        $count = $_table->where($_map)->join($join)->count();// 查询满足要求的总记录数
+        
         $Page  = new \Think\Page($count,10);// 实例化分页类 传入总记录数和每页显示的记录数(25)
+        $Page->rollPage=5;
+        $Page->setConfig('prev','上一页');
+        $Page->setConfig('next','下一页');
+        $Page->setConfig("first","首页...");
+        $Page->setConfig("last","...尾页");
+        $Page->lastSuffix=false;
+
+        foreach($condition as $key=>$val) {
+        //echo $key.$val;
+        $Page->parameter[$key]=$val;
+        }
+
         $show = $Page->show();// 分页显示输出
+
         // 进行分页数据查询 注意limit方法的参数要使用Page类的属性
   
-        $list = $_table->where($condition)->field($field)->order($reder)->limit($Page->firstRow.','.$Page->listRows)->select();
+        $list = $_table->where($_map)->field($field)->join($join)->order($order)->limit($Page->firstRow.','.$Page->listRows)->select();
         $this->assign('thead',$thead);
         $this->assign('list',$list);// 赋值数据集
         $this->assign('page',$show);// 赋值分页输出
@@ -74,7 +94,7 @@ class BaseController extends Controller{
      */
     protected function alterDate($Model)
     {
-        if(IS_post)
+        if(IS_POST)
         {
             $Model->alterMember()?$this->error('修改失败'):$this->success('修改成功');
         }

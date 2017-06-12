@@ -27,7 +27,7 @@
   <div class="control-group">
     <label class="control-label" >课程代码</label>
     <div class="controls">
-      <input type="text"   name="cou_code" placeholder="课程代码"><span>&nbsp* </span>
+      <input type="text"   name="cou_code" readonly="true" value="<?php echo ($cou_code); ?>"><span>&nbsp* </span>
     </div>
   </div>
 
@@ -59,6 +59,14 @@
       <input type="text" name="cou_remainder" placeholder="剩余人数"><span>&nbsp* </span>
     </div>
   </div>
+
+  <div class="control-group">
+    <label class="control-label" >老师编号</label>
+    <div class="controls">
+      <input type="text" name="tea_idnum" placeholder="老师编号"><span>&nbsp* </span>
+    </div>
+  </div>
+
   <div class="control-group">
     <label class="control-label" >备注</label>
     <div class="controls">

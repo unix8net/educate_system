@@ -30,16 +30,15 @@
 
 	<form action="<?php echo U('Admin/Course/searchCourse');?>" method="post" class="form-search">
 
-		<select class="form-control" name='type'> 
+		<select class="form-control" name='type' > 
 			<option value="cou_code">课程代码</option> 
 			<option value="cou_name">课程名称</option> 
 			<option value="cou_type">类别</option> 
 		</select>
- 		<input style="margin-left: 100px" type="text" name="name" class="input-medium search-query">
+ 		<input style="margin-left: 100px" type="text" name="name" class="input-medium search-query" value="<?php echo ($value); ?>">
  		<button type="submit" class="btn">Search</button>
 
 	</form>
-
 	
 	<table class="table table-hover table-bordered">
 	 <?php echo ($thead); ?>

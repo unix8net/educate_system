@@ -9,7 +9,8 @@ class CoursesonModel extends Model{
 		array('cou_term','require','学年学期必须'),
 		array('cou_total','require','总可选人数必须'),
 		array('cou_remainder','require','剩余人数必须'),
-		array('cou_number','','课程已经存在',0,'unique',1)
+		array('cou_number','','课程已经存在',0,'unique',1),
+		array('tea_idnum','require','老师id必须')
 		);
 	public function deleteMember()
 	{

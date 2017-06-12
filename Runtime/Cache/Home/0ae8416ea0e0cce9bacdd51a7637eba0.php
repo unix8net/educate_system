@@ -1,0 +1,30 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="initial-scale=1,width=device-width,user-scalable=no"/>
+<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"> 
+
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/educate/Public/home/css/tea_index.css">
+<script type="text/javascript" src="/educate/Public/home/js/tea_index.js"></script>	
+
+
+</head>
+<body>
+	
+	<div class="content">
+		<div id="welcome">
+		  <ul class="nav nav_right navbar-nav">
+		      <li><a href="/educate/index.php/Home/teaInfo/showPerson.html"  id="welcome">欢迎你：<?php echo session('tea_name');?></a></li>
+		      <li><a href="/educate/index.php/Home/Index/tea_login_out.html" >注销</a></li>
+		  </ul>
+		</div>
+
+
+		<h1>欢迎来到教务系统</h1>
+	</div>
+
+</body>
+</html>

@@ -15,6 +15,9 @@
 		span{
 			color:red;
 		}
+    select{
+      width: 206px;
+    }
 	</style>
 </head>
 <body>
@@ -38,7 +41,9 @@
   <div class="control-group">
     <label class="control-label" >班级</label>
     <div class="controls">
-      <input type="text"  name="stu_class" placeholder="班级"><span>&nbsp* </span>
+      <select class="form-control" name='stu_class' > 
+        <?php if(is_array($_class)): foreach($_class as $key=>$it): ?><option value="<?php echo ($it["cla_code"]); ?>"><?php echo ($it["cla_name"]); ?></option><?php endforeach; endif; ?>
+      </select>
     </div>
   </div>
 

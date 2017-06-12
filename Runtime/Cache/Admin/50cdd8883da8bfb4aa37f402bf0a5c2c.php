@@ -32,10 +32,10 @@
 
 		<select class="form-control" name='type'> 
 			<option value="tea_idnum">编号</option> 
-			<option value="pro_code">专业</option> 
+			<option value="pro_name">专业</option> 
 			<option value="tea_name">姓名</option> 
 		</select>
- 		<input style="margin-left: 100px" type="text" name="name" class="input-medium search-query">
+ 		<input style="margin-left: 100px" type="text" name="name" class="input-medium search-query" value="<?php echo ($value); ?>">
  		<button type="submit" class="btn">Search</button>
 	</form>
 
@@ -46,7 +46,7 @@
 		<?php if(is_array($list)): foreach($list as $key=>$vo): ?><tr>
 				<td><?php echo ($vo["tea_name"]); ?></td>
 				<td><?php echo ($vo["tea_idnum"]); ?></td>
-				<td><?php echo ($vo["pro_code"]); ?></td>
+				<td><?php echo ($vo["pro_name"]); ?></td>
 				<td><?php echo ($vo["tea_enrol"]); ?></td>
 				<td><a href="<?php echo U('Admin/Teacher/deleteTeacher');?>?tea_idnum=<?php echo ($vo["tea_idnum"]); ?>">删除</a></td>
 				<td><a href="<?php echo U('Admin/Teacher/alterTeacher');?>?tea_idnum=<?php echo ($vo["tea_idnum"]); ?>">修改</a></td>

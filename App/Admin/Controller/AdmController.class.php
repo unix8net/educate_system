@@ -2,7 +2,6 @@
 namespace  Admin\Controller;
 class AdmController extends BaseController
 {
-
 	/**
 	 * 增加用户
 	 */
@@ -17,6 +16,7 @@ class AdmController extends BaseController
 		}
 		$this->addDate($Admin);
 	}
+
 
 	/**
 	 * 删除用户
@@ -80,7 +80,7 @@ class AdmController extends BaseController
 		if($result)
 		{
 			$this->assign('result',$result);
-			$this->display();		
+			$this->display();	
 		}
 	}
 

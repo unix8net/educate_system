@@ -13,9 +13,9 @@ define('APP_PATH','./App/');
 
 
 
-//define('BIND_MODULE','Home');
 //define('BUILD_CONTROLLER_LIST','Index,User,Menu');
 //define('BUILD_MODEL_LIST','User,Menu');
+//define('BIND_MODULE','Oj');
 
 
 //  定义运行时目录

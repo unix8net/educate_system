@@ -1,0 +1,35 @@
+
+td{
+	color: #fff;
+}
+th{
+	text-align: left;
+	padding:15px 0;
+}
+table{
+
+	padding-left: 150px;
+}
+.submitRes-0{
+	color:#f90
+}
+
+.submitRes-1{
+	color:blue
+}
+
+.submitRes-2{
+	color:#90f
+}
+
+.submitRes-3{
+	color:red
+}
+
+.submitRes-4,.submitRes-5,.submitRes-6,.submitRes-7,.submitRes-8,.submitRes-9,.submitRes-10,.submitRes-11,.submitRes-12,.submitRes-13{
+	color:green
+}
+
+.submitRes-14{
+	color:#444
+}

@@ -1,7 +1,8 @@
 <?php if (!defined('THINK_PATH')) exit();?><html>
 <head>
-	<title>登录</title>
+	<title>教务系统后台登录</title>
 	<meta name="renderer" content="webkit">
+
 	<link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 	<script type="text/javascript" src="/educate/Public/js/login.js"></script>
@@ -21,6 +22,7 @@
 <body>
 
 <form action="<?php echo U('Admin/Login/login');?>" method="post">
+	测试账号：test 密码：000000
 	<div class="input-group">
 		 <span class="input-group-addon" id="basic-addon1">@</span>
 		<input class="form-control" type="text" name="name" placeholder="用户名" >
@@ -34,7 +36,7 @@
 
 	<button  class="btn btn-default" type="submit" style="width:280px">登录</button>
 	</div>
-	<button  class="btn btn-default" id="reset" type="submit" style="width:280px">重置</button>
+	<button  class="btn btn-default" id="reset" type="reset" style="width:280px">重置</button>
 </form>
 
 </body>

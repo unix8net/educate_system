@@ -71,6 +71,13 @@
     </div>
   </div>
   <div class="control-group">
+    <label class="control-label" >老师编号</label>
+    <div class="controls">
+      <input type="text" name="tea_idnum" value="<?php echo ($result["tea_idnum"]); ?>"><span>&nbsp* </span>
+    </div>
+  </div>
+
+  <div class="control-group">
     <label class="control-label" >备注</label>
     <div class="controls">
       <input type="text" name="cou_remark" value="<?php echo ($result["cou_remark"]); ?>"><span>&nbsp* </span>

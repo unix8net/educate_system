@@ -1,8 +1,105 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
-class IndexController extends Controller {
-    public function index(){
-        $this->show('<style type="text/css">*{ padding: 0; margin: 0; } div{ padding: 4px 48px;} body{ background: #fff; font-family: "微软雅黑"; color: #333;font-size:24px} h1{ font-size: 100px; font-weight: normal; margin-bottom: 12px; } p{ line-height: 1.8em; font-size: 36px } a,a:hover{color:blue;}</style><div style="padding: 24px 48px;"> <h1>:)</h1><p>欢迎使用 <b>ThinkPHP</b>！</p><br/>版本 V{$Think.version}</div><script type="text/javascript" src="http://ad.topthink.com/Public/static/client.js"></script><thinkad id="ad_55e75dfae343f5a1"></thinkad><script type="text/javascript" src="http://tajs.qq.com/stats?sId=9347272" charset="UTF-8"></script>','utf-8');
+class IndexController extends BaseController {
+
+	public function tea_login()
+    {
+        if(session('tea_login')=='is_teacher')$this->success('你已登录',U('Home/Index/tea_index'));
+        else if(IS_POST)
+        {
+            $count=M()->table('ttea_information')->where(array('tea_idnum'=>$_POST['name']))->count();
+            if($count)
+            {
+                $result=M()->table('ttea_information')->where(array('tea_idnum'=>$_POST['name']))->field('tea_password')->find();
+                if($result['tea_password']==$_POST['password'])
+                {
+                    session('tea_name',$_POST['name']);
+                    //session(array('login'=>'is_teacher','expire'=>1800));
+                    session('tea_login','is_teacher');
+                    $this->success('登录成功',U('Home/Index/tea_index'));
+                }
+                else{
+                    $this->error('密码错误');
+                }
+            }
+            else
+            {
+                $this->error('用户名不存在');
+            }
+        }
+        else
+        {
+            $this->display();
+        }
     }
+    public function tea_login_out()
+    {
+        session('tea_name',null);
+        session('tea_login',null);
+        $this->success('退出成功',U('Home/index/tea_login'));
+    }
+
+
+	public function login()
+	{
+		if(session('stu_login')=='is_student')$this->success('你已登录',U('Home/Index/index'));
+		else if(IS_POST)
+		{
+            $count=M()->table('tstu_information')->where(array('stu_idnum'=>$_POST['name']))->count();
+            if($count)
+            {
+            	$result=M()->table('tstu_information')->where(array('stu_idnum'=>$_POST['name']))->field('stu_password')->find();
+            	if($result['stu_password']==$_POST['password'])
+            	{
+            		session('stu_name',$_POST['name']);
+                    //session(array('login'=>'is_student','expire'=>1800));
+                    session('stu_login','is_student');
+            		$this->success('登录成功',U('Home/Index/index'));
+            	}
+                else{
+                	$this->error('密码错误');
+                }
+            }
+            else
+            {
+                $this->error('用户名不存在');
+            }
+		}
+		else
+		{
+			$this->display();
+		}
+	}
+    public function login_out()
+    {
+        session('stu_name',null);
+        session('stu_login',null);
+        $this->success('退出成功',U('Home/index/login'));
+    }
+
+    public function index()
+    {
+        $this->is_stu_login();
+        $this->display();
+    }
+
+    public function tea_index()
+    {
+        $this->is_tea_login();
+        $this->display();
+    }
+    
+    public function welcome()
+    {
+       //  $a="<a href='".U('Home/Index/tea_login')."'>老师登录</a><br>"
+       //  ."<a href='".U('Home/Index/login')."'>学生登录</a><br>".
+       // "<a href='".U('admin/login/login')."'>管理员登录</a><br>";
+       $this->assign('login',$a);
+       $this->display();
+    }
+
+
+
+
 }

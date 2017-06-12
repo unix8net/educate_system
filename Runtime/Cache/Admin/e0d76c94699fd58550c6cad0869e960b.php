@@ -15,6 +15,10 @@
 		span{
 			color:red;
 		}
+    select{
+      position: absolute;
+      width:206px;
+    }
 	</style>
 </head>
 <body>
@@ -39,7 +43,9 @@
   <div class="control-group">
     <label class="control-label" >所属专业</label>
     <div class="controls">
-      <input type="text"   name="pro_code" placeholder="属于哪个专业"><span>&nbsp* </span>
+      <select class="form-control" name='pro_code' > 
+        <?php if(is_array($_pro)): foreach($_pro as $key=>$it): ?><option value="<?php echo ($it["pro_code"]); ?>"><?php echo ($it["pro_name"]); ?></option><?php endforeach; endif; ?>
+      </select>
     </div>
   </div>
 
